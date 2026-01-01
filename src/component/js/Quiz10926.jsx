@@ -40,7 +40,7 @@ const Quiz10926 = () => {
         onSubmit={handleSubmitId}
         className="flex flex-row gap-2 items-center"
       >
-        <dic>ID</dic>
+        <div>ID</div>
         <div>
           <input
             type="text"

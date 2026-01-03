@@ -152,7 +152,10 @@ const Quiz10926 = () => {
             className="border border-slate-300 rounded-lg bg-white py-1 px-2 text-sm"
           />
         </div>
-        <button className="rounded-2xl p-1 bg-slate-700 text-white text-sm">
+        <button
+          type="submit"
+          className="cursor-pointer rounded-2xl p-1 bg-slate-700 text-white text-sm"
+        >
           제출하기
         </button>
       </form>

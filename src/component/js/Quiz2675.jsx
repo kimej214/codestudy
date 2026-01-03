@@ -232,7 +232,10 @@ const Quiz2675 = () => {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="rounded-2xl p-1 bg-slate-700 text-white text-sm">
+        <button
+          type="submit"
+          className="cursor-pointer rounded-2xl p-1 bg-slate-700 text-white text-sm"
+        >
           제출하기
         </button>
       </form>

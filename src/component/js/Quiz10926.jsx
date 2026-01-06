@@ -96,7 +96,13 @@ public class Main {
 
 const CodeViewer = ({ code }) => {
   return (
-    <pre className="bg-slate-100 text-black p-4 rounded-lg text-sm overflow-x-auto">
+    <pre
+      className="bg-slate-100 text-black p-4 rounded-lg text-sm overflow-x-hidden"
+      style={{
+        whiteSpace: "pre-wrap",
+        wordBreak: "break-word",
+      }}
+    >
       <code>{code}</code>
     </pre>
   );

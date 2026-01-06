@@ -4,7 +4,7 @@ const codeString1 = `
 import { useState } from "react";
 
 const Quiz18108 = () => {
-  const [inputYear, setInputYear] = useState();
+  const [inputYear, setInputYear] = useState("");
   const diffYear = 543;
 
   const handleChange = (e) => {

@@ -7,6 +7,8 @@ import Quiz10926 from "./component/js/Quiz10926";
 import Quiz2675 from "./component/js/Quiz2675";
 import Quiz18108 from "./component/java/Quiz18108";
 import Quiz2753 from "./component/java/Quiz2753";
+import Quiz25304 from "./component/java/Quiz25304";
+import Quiz10988 from "./component/java/Quiz10988";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="java" element={<Java />}>
             <Route path="18108" element={<Quiz18108 />} />
             <Route path="2753" element={<Quiz2753 />} />
+            <Route path="25304" element={<Quiz25304 />} />
+            <Route path="10988" element={<Quiz10988 />} />
           </Route>
         </Route>
       </Routes>

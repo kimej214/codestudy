@@ -110,7 +110,15 @@ public class java10988 {
 }
 `;
 
-const codeString3 = `
+const codeString3 = `BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String text = br.readLine();
+
+String reversed = new StringBuilder(text).reverse().toString();
+
+System.out.println(text.equals(reversed) ? 1 : 0);
+`;
+
+const codeString4 = `
 const fs = require("fs");
 
 // 입력 받기
@@ -137,6 +145,16 @@ for (let i = 0; i < length; i++) {
 
 // 결과 출력
 console.log(isPalindrome ? 1 : 0);
+`;
+
+const codeString5 = `
+const fs = require("fs");
+
+const text = fs.readFileSync(0, "utf8").trim();
+
+const reversed = text.split("").reverse().join("");
+
+console.log(text === reversed ? 1 : 0);
 `;
 
 const CodeViewer = ({ code }) => {
@@ -239,10 +257,85 @@ const Quiz10988 = () => {
             <CodeViewer code={codeString2} />
           </div>
 
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              -{" "}
+              <span className="bg-blue-100 font-semibold">
+                char[] reversedText;
+              </span>
+              : char 배열을 가리킬 수 있는 변수 선언
+            </div>
+            <div className="pl-4">
+              <div>- 이 시점에는 변수는 null이 들어 있음</div>
+              <div>- 배열이 아직 없음. 배열 객체에 대한 메모리 공간 없음</div>
+              <div>
+                - 값 상태: reversedText는 아무 것도 가리키지 않음. <br />
+                <span className="pl-19">
+                  배열 요소 접근 시 NullPointerException 발생
+                </span>
+              </div>
+            </div>
+            <div>
+              -{" "}
+              <span className="bg-blue-100 font-semibold">
+                new char[length]
+              </span>
+              : 길이가 length인 char 배열을 실제로 생성
+            </div>
+            <div className="pl-4">
+              <div>
+                - 이 순간 메모리에 length만큼 공간이 확보됨
+                <span className="text-green-700">
+                  {" "}
+                  (ex. length(3)의 인덱스 범위: 0, 1, 2)
+                </span>
+              </div>
+              <div>- 각 칸의 초기값: char의 기본값 \u0000</div>
+            </div>
+            <div>
+              - <span className="bg-amber-200 font-semibold">charAt()</span>:
+              String 전용. 문자 배열이 아님.
+            </div>
+            <div className="pl-4">
+              <div>
+                - 내부적으로 char들을 가지고 있지만 직접 text[i] 이런 접근은
+                문법적으로 불가능
+              </div>
+              <div>
+                - String은 배열이 아니라 객체. 문자 접근을 메서드로만 허용하도록
+                설계됨
+              </div>
+              <div>
+                - <span className="bg-amber-200 font-semibold">String[]</span> :
+                이 경우에는 문자열
+                <span className="text-green-700">(String)</span> 객체들의 배열
+              </div>
+            </div>
+            <div>
+              - <span className="bg-amber-200 font-semibold">char[]</span>:
+              char은 String이 아님. 배열[]이 있어 인덱스로 바로 접근하는 구조
+            </div>
+            <div className="pl-4">
+              <div>
+                - <span className="bg-amber-200 font-semibold">char</span> :
+                char 자체는 문자 하나. 인덱스 개념 없음
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center text-sm">더 짧게도 가능 (자바)</div>
+          <div className="w-full max-w-2xl my-4">
+            <CodeViewer code={codeString3} />
+          </div>
+
           {/* Node.js 코드 */}
           <div className="text-center text-sm">Node.js라면?</div>
           <div className="w-full max-w-2xl my-4">
-            <CodeViewer code={codeString3} />
+            <CodeViewer code={codeString4} />
+          </div>
+          <div className="text-center text-sm">더 짧게도 가능 (Node.js)</div>
+          <div className="w-full max-w-2xl my-4">
+            <CodeViewer code={codeString5} />
           </div>
         </div>
       )}

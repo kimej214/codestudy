@@ -286,6 +286,51 @@ const Quiz25304 = () => {
             <CodeViewer code={codeString1} />
           </div>
 
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className="font-semibold">split → map → filter</span>:
+              자른 걸 map으로 가공한 다음, 그 결과를 filter로 걸러냄
+            </div>
+            <div>
+              -{" "}
+              <span className="bg-amber-200 font-semibold">
+                Number.isFinite()
+              </span>
+              : 값이 유한한 숫자인지 확인. NaN / Infinity 차단
+            </div>
+            <div className="pl-4">
+              <div>
+                - 자바스크립트 표준 내장 메서드. Number 객체의 정적 메서드
+              </div>
+              <div>
+                -{" "}
+                <span className="bg-amber-200 font-semibold">
+                  Number.isFinite
+                </span>{" "}
+                : 타입 변환 안 함. 인자로 들어온 값 그대로 검사
+              </div>
+              <div>
+                -{" "}
+                <span className="bg-amber-200 font-semibold">
+                  전역 isFinite
+                </span>{" "}
+                : 문자열 → 숫자로 강제 변환함
+              </div>
+            </div>
+            <div>
+              -{" "}
+              <span className="bg-amber-200 font-semibold">
+                Number.isInteger()
+              </span>
+              : 문제 조건 충족 여부 확인. 정수만 허용
+            </div>
+            <div className="pl-4">
+              <div>
+                - 자바스크립트 표준 내장 메서드. Number 객체의 정적 메서드
+              </div>
+            </div>
+          </div>
+
           {/* 실제 사이트 제출용 코드 */}
           <div className="text-center text-sm">실제 제출용 (자바 코드)</div>
           <div className="w-full max-w-2xl my-4">

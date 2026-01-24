@@ -34,6 +34,21 @@ const Java = () => {
         <Link to="2745" className={quizBtnCss}>
           2745
         </Link>
+        <Link to="1436" className={quizBtnCss}>
+          1436
+        </Link>
+        <Link to="2750" className={quizBtnCss}>
+          2750
+        </Link>
+        <Link to="7785" className={quizBtnCss}>
+          7785
+        </Link>
+        <Link to="1934" className={quizBtnCss}>
+          1934
+        </Link>
+        <Link to="28278" className={quizBtnCss}>
+          28278
+        </Link>
       </div>
       <Outlet />
     </div>

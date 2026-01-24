@@ -14,6 +14,11 @@ import Quiz10809 from "./component/java/Quiz10809";
 import Quiz25206 from "./component/java/Quiz25206";
 import Quiz2738 from "./component/java/Quiz2738";
 import Quiz2745 from "./component/java/Quiz2745";
+import Quiz1436 from "./component/java/Quiz1436";
+import Quiz2750 from "./component/java/Quiz2750";
+import Quiz7785 from "./component/java/Quiz7785";
+import Quiz1934 from "./component/java/Quiz1934";
+import Quiz28278 from "./component/java/Quiz28278";
 
 function App() {
   return (
@@ -35,6 +40,11 @@ function App() {
             <Route path="25206" element={<Quiz25206 />} />
             <Route path="2738" element={<Quiz2738 />} />
             <Route path="2745" element={<Quiz2745 />} />
+            <Route path="1436" element={<Quiz1436 />} />
+            <Route path="2750" element={<Quiz2750 />} />
+            <Route path="7785" element={<Quiz7785 />} />
+            <Route path="1934" element={<Quiz1934 />} />
+            <Route path="28278" element={<Quiz28278 />} />
           </Route>
         </Route>
       </Routes>

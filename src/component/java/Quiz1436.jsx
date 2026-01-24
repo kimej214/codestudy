@@ -200,6 +200,31 @@ const Quiz1436 = () => {
             <CodeViewer code={codeString2} />
           </div>
 
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              -{" "}
+              <span className="bg-amber-200 font-semibold">
+                Integer.toString(값)
+              </span>
+              : 숫자를 문자열로 바꿈
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>해당 메서드를 다르게 표현하고 싶다면?</div>
+              <div className="pl-4">
+                <div>
+                  -{" "}
+                  <span className="bg-amber-200 font-semibold">
+                    String.valueOf(값)
+                  </span>
+                </div>
+                <div>
+                  - <span className="bg-amber-200 font-semibold">+ ""</span> :
+                  앞에 빈 문자열을 붙여 문자열로 만듦
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Node.js 코드 */}
           <div className="text-center text-sm">Node.js라면?</div>
           <div className="w-full max-w-2xl my-4">

@@ -212,6 +212,8 @@ const Quiz28278 = () => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
+  const boldCss = "font-semibold";
+  const amberCss = "bg-amber-200 font-semibold";
 
   const input = inputValue.trim().split("\n");
 
@@ -306,17 +308,101 @@ const Quiz28278 = () => {
           <div className="w-full max-w-2xl my-4">
             <CodeViewer code={codeString1} />
           </div>
-
           {/* 실제 사이트 제출용 코드 */}
           <div className="text-center text-sm">실제 제출용 (자바 코드)</div>
           <div className="w-full max-w-2xl my-4">
             <CodeViewer code={codeString2} />
           </div>
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className={amberCss}>remove</span>: 컬렉션에서 요소
+              제거하는 메서드
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>- 인터페이스/구현체에 따라 동작 기준이 다름</div>
+              <div className={boldCss}>Set / List 공통</div>
+              <div className="pl-4 flex flex-col gap-2">
+                <div>
+                  <span className={amberCss}>remove(Object o)</span>
+                </div>
+                <div className="pl-4 flex flex-col gap-2">
+                  <div>- 해당 값과 동일한 요소 제거</div>
+                  <div>- 반환값: boolean</div>
+                </div>
+              </div>
+              <div className={boldCss}>List 특이 사항</div>
+              <div className="pl-4 flex flex-col gap-2">
+                <div>
+                  <span className={amberCss}>remove(int index)</span>
+                </div>
+                <div className="pl-4 flex flex-col gap-2">
+                  <div>- 인덱스 기준 제거</div>
+                  <div>- 반환값: 제거된 요소</div>
+                  <div>- List에서 숫자 제거 시 오버로드 혼동 주의</div>
+                  <div>- 값 제거를 원하면 Integer.valueOf 사용하는 게 안전</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              - <span className={amberCss}>isEmpty</span>: 컬렉션이 비어 있는지
+              확인
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>- 반환값: boolean</div>
+              <div>- size() == 0과 동일한 의미</div>
+              <div>- 인터페이스/구현체에 따라 동작 기준이 다름</div>
+              <div>- 가독성 좋음</div>
+              <div>- 내부 구현 변경에 영향 없음</div>
+            </div>
+            <div>
+              - <span className={amberCss}>size</span>: 컬렉션에 저장된 요소
+              개수 반환
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>- 반환값: int</div>
+              <div>- 실제 저장된 요소 수 기준</div>
+              <div>
+                - 배열의 length와 개념은 비슷하지만 size는 메서드 / length는
+                필드
+              </div>
+            </div>
 
-          {/* Node.js 코드 */}
-          <div className="text-center text-sm">Node.js라면?</div>
-          <div className="w-full max-w-2xl my-4">
-            <CodeViewer code={codeString3} />
+            {/* Node.js 코드 */}
+            <div className="text-center text-sm">Node.js라면?</div>
+            <div className="w-full max-w-2xl my-4">
+              <CodeViewer code={codeString3} />
+            </div>
+
+            <div className="pb-5 flex flex-col gap-2">
+              <div>
+                - <span className={boldCss}>pop과 delete 차이</span>
+              </div>
+              <div className="pl-4 flex flex-col gap-2">
+                <div>
+                  <span className={amberCss}>pop</span> : 배열의 마지막 요소
+                  제거
+                </div>
+                <div className="pl-4">
+                  <div>- 원본 배열 변경</div>
+                  <div>- 반환값 : 제거된 요소</div>
+                  <div>- 배열 길이 감소</div>
+                </div>
+                <div>
+                  <span className={amberCss}>delete</span> : 객체의 프로퍼티
+                  또는 배열 슬롯 제거
+                </div>
+                <div className="pl-4">
+                  <div>
+                    배열에서 사용 시
+                    <div className="pl-4">
+                      <div>- 길이 변화 없음</div>
+                      <div>- 배열에 빈 공간 발생</div>
+                      <div>- 반복문, length 기준 로직에서 오류 유발 가능</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

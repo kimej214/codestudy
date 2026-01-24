@@ -125,6 +125,8 @@ const Quiz2750 = () => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
+  const boldCss = "font-semibold";
+  const amberCss = "bg-amber-200 font-semibold";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -193,10 +195,97 @@ const Quiz2750 = () => {
             <CodeViewer code={codeString2} />
           </div>
 
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className={amberCss}>Set</span>: 숫자를 문자열로 바꿈
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div className={boldCss}>Set 공통 특징</div>
+              <div className="pl-4">
+                <div>- 중복 허용 안 함</div>
+                <div>
+                  - 순서 보장 안 함{" "}
+                  <span className="text-green-700">(일부 구현체 제외)</span>
+                </div>
+                <div>- 인덱스 접근 불가</div>
+              </div>
+              <div>
+                <span className={amberCss}>HashSet</span>
+              </div>
+              <div className="pl-4">
+                <div>- 내부 구조: 해시 기반</div>
+                <div>- 저장 순서: 보장 안됨</div>
+                <div>- 성능: 가장 빠름 O(1)</div>
+                <div>- 사용 상황: 순서 필요 없고, 성능이 중요할 때</div>
+              </div>
+              <div>
+                <span className={amberCss}>LinkedHashSet</span>
+              </div>
+              <div className="pl-4">
+                <div>- 내부 구조: 해시 + 연결 리스트</div>
+                <div>- 저장 순서: 입력 순서 유지</div>
+                <div>- 성능: HashSet보다 약간 느림</div>
+                <div>- 사용 상황: 중복 제거 + 입력 순서 유지 필요</div>
+              </div>
+              <div>
+                <span className={amberCss}>TreeSet</span>
+              </div>
+              <div className="pl-4">
+                <div>
+                  - 내부 구조: 이진 탐색 트리{" "}
+                  <span className="text-green-700">(Red-Black Tree)</span>
+                </div>
+                <div>- 저장 순서: 자동 정렬</div>
+                <div>- 성능: O(log n)</div>
+                <div>- 사용 상황: 정렬된 상태로 유지 필요</div>
+              </div>
+            </div>
+          </div>
+
           {/* Node.js 코드 */}
           <div className="text-center text-sm">Node.js라면?</div>
           <div className="w-full max-w-2xl my-4">
             <CodeViewer code={codeString3} />
+          </div>
+
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className={amberCss}>Array.from(set)</span>: Set 객체를
+              Array로 변환
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>- Set에는 sort 메서드가 없음</div>
+              <div>- 중복 제거된 값들이 배열로 변환됨</div>
+              <div className={boldCss}>자바 Set 차이</div>
+              <div className="pl-4 flex flex-col gap-2">
+                <div className={boldCss}>공통점</div>
+                <div className="pl-4">
+                  <div>- 중복 제거</div>
+                  <div>- 순수 집합 개념</div>
+                </div>
+                <div className={boldCss}>차이점</div>
+                <div className="pl-4 flex flex-col gap-2">
+                  <div className={boldCss}>자바 Set</div>
+                  <div className="pl-4">
+                    <div>- 인터페이스 기반</div>
+                    <div>
+                      - 구현체 선택 필요{" "}
+                      <span className="text-green-700">
+                        (HashSet, TreeSet 등)
+                      </span>
+                    </div>
+                    <div>- 정렬, 순서 여부가 구현체에 따라 다름</div>
+                  </div>
+                  <div className={boldCss}>자바스크립트 Set</div>
+                  <div className="pl-4">
+                    <div>- 단일 구현</div>
+                    <div>- 입력 순서 유지</div>
+                    <div>- 정렬 기능 없음</div>
+                    <div>- 배열로 변환 후 처리 필요</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

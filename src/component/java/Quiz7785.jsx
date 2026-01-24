@@ -148,6 +148,9 @@ const Quiz7785 = () => {
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [result, setResult] = useState("");
+  const boldCss = "font-semibold";
+  const amberCss = "bg-amber-200 font-semibold";
+  const greenCss = "text-green-700";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -222,10 +225,168 @@ const Quiz7785 = () => {
             <CodeViewer code={codeString2} />
           </div>
 
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className={amberCss}>descendingSet</span>: TreeSet에서만
+              제공되는 메서드
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>
+                - 기존 TreeSet을 내림차순으로 바라보는 뷰
+                <span className={greenCss}>(View)</span> 반환
+              </div>
+              <div>- 새로운 Set을 복사 생성하는 것이 아님</div>
+              <div>- 원본 TreeSet과 연결된 뷰</div>
+              <div>- descendingSet에서 제거 → 원본에서도 제거됨</div>
+              <div>- HashSet, LinkedHashSet에서는 사용 불가</div>
+            </div>
+
+            <div>
+              -{" "}
+              <span className={boldCss}>
+                remove와 비슷한 메서드 차이{" "}
+                <span className={greenCss}>(Set 기준)</span>
+              </span>
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>
+                <span className={amberCss}>remove(Object o)</span>
+              </div>
+              <div className="pl-4">
+                <div>- 해당 요소가 있으면 삭제</div>
+                <div>- 반환값: boolean</div>
+              </div>
+              <div>
+                <span className={amberCss}>clear()</span>
+              </div>
+              <div className="pl-4">
+                <div>- 모든 요소 제거</div>
+              </div>
+              <div>
+                <span className={amberCss}>removeAll(Collection c)</span>
+              </div>
+              <div className="pl-4">
+                <div>- 전달한 컬렉션에 포함된 요소만 제거</div>
+              </div>
+              <div>
+                <span className={amberCss}>retainAll(Collection c)</span>
+              </div>
+              <div className="pl-4">
+                <div>- 전달한 컬렉션에 포함된 것만 유지</div>
+                <div>- 나머지는 제거</div>
+              </div>
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <span className={boldCss}>상황별 메서드 정리</span>
+              <div className="pl-4 flex flex-col gap-2">
+                <div>
+                  - 하나 제거: <span className={amberCss}>remove</span>
+                </div>
+                <div>
+                  - 여러 개 제거: <span className={amberCss}>removeAll</span>
+                </div>
+                <div>
+                  - 교집합만 남김: <span className={amberCss}>retainAll</span>
+                </div>
+                <div>
+                  - 전부 제거: <span className={amberCss}>clear</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              - <span className={boldCss}>add랑 put 차이</span>
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>
+                <span className={amberCss}>put (Map)</span>
+              </div>
+              <div className="pl-4">
+                <div>- key-value 구조</div>
+                <div>- 동일 key가 있으면 value 덮어씀</div>
+                <div>
+                  - 이전 value 반환{" "}
+                  <span className={greenCss}>(없으면 null)</span>
+                </div>
+              </div>
+              <div>
+                <span className={amberCss}>add (Set)</span>
+              </div>
+              <div className="pl-4">
+                <div>- 중복 허용 안 함</div>
+                <div>- 이미 존재하면 false 반환</div>
+                <div>- 값 하나만 관리</div>
+              </div>
+            </div>
+          </div>
+
           {/* Node.js 코드 */}
           <div className="text-center text-sm">Node.js라면?</div>
           <div className="w-full max-w-2xl my-4">
             <CodeViewer code={codeString3} />
+          </div>
+
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className={amberCss}>delete</span>: 객체
+              <span className={greenCss}>(Object)</span> 또는 Map, Set에서
+              요소를 제거하는 데 사용
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div>- 사용 대상에 따라 동작 방식이 다름</div>
+              <div className={boldCss}>
+                객체<span className={greenCss}>(Object)</span>에서 delete
+              </div>
+              <div className="pl-4">
+                <div>- 객체의 프로퍼티 자체를 제거</div>
+                <div>- 성공 여부와 관계없이 boolean 반환</div>
+                <div>- 존재하지 않는 키 delete 사용시 오류 없음</div>
+                <div>- 배열 요소에 사용시 빈 슬롯 발생</div>
+                <div>- 배열 길이: 줄어들지 않음</div>
+              </div>
+              <div className={boldCss}>Map에서 delete</div>
+              <div className="pl-4">
+                <div>- key 기준으로 삭제</div>
+                <div>- 반환값: boolean</div>
+              </div>
+              <div className={boldCss}>Set에서 delete</div>
+              <div className="pl-4">
+                <div>- 값 기준으로 삭제</div>
+                <div>- 반환값: boolean</div>
+              </div>
+            </div>
+            <div className="pl-4 flex flex-col gap-2">
+              <div className={boldCss}>상황별 메서드 정리 </div>
+              <div className="pl-4 flex flex-col gap-2">
+                <div>객체 프로퍼티 제거</div>
+                <div className="pl-4 flex flex-col gap-2">
+                  <div>
+                    - <span className={amberCss}>delete</span>
+                  </div>
+                  <div>
+                    - <span className={amberCss}>Reflect.deleteProperty</span>
+                  </div>
+                </div>
+                <div>배열 요소 제거</div>
+                <div className="pl-4 flex flex-col gap-2">
+                  <div>
+                    - <span className={amberCss}>splice</span>{" "}
+                    <span className={greenCss}>(원본 수정)</span>
+                  </div>
+                  <div>
+                    - <span className={amberCss}>filter</span>{" "}
+                    <span className={greenCss}>(원본 유지)</span>
+                  </div>
+                </div>
+                <div>
+                  Set / Map 단일 요소 제거:{" "}
+                  <span className={amberCss}>delete</span>
+                </div>
+                <div>
+                  Set / Map 전체 제거: <span className={amberCss}>clear</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}

@@ -280,6 +280,12 @@ const Quiz1934 = () => {
           <div className="w-full max-w-2xl my-4">
             <CodeViewer code={codeString3} />
           </div>
+          <div className="pb-5 flex flex-col gap-2">
+            <div>
+              - <span className="bg-amber-200 font-semibold">textarea</span>:
+              textarea 입력값은 항상 문자열
+            </div>
+          </div>
         </div>
       )}
     </div>

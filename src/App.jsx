@@ -19,6 +19,9 @@ import Quiz2750 from "./component/java/Quiz2750";
 import Quiz7785 from "./component/java/Quiz7785";
 import Quiz1934 from "./component/java/Quiz1934";
 import Quiz28278 from "./component/java/Quiz28278";
+import Quiz10872 from "./component/java/Quiz10872";
+import Quiz26069 from "./component/java/Quiz26069";
+import Quiz10870 from "./component/java/Quiz10870";
 
 function App() {
   return (
@@ -45,6 +48,9 @@ function App() {
             <Route path="7785" element={<Quiz7785 />} />
             <Route path="1934" element={<Quiz1934 />} />
             <Route path="28278" element={<Quiz28278 />} />
+            <Route path="10872" element={<Quiz10872 />} />
+            <Route path="26069" element={<Quiz26069 />} />
+            <Route path="10870" element={<Quiz10870 />} />
           </Route>
         </Route>
       </Routes>
